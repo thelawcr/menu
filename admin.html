@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de administración · Comedor UCR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/admin.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+</head>
+<body>
+
+  <!-- ===== PANEL (la sesión se verifica en admin.js antes de mostrar nada) ===== -->
+  <div class="admin-app" id="adminApp">
+
+    <div class="admin-shell">
+
+      <!-- ===== NAVEGACIÓN (barra lateral en escritorio, pestañas arriba en móvil) ===== -->
+      <nav class="admin-nav" aria-label="Secciones del panel">
+        <div class="nav-brand">
+          <div class="brand-badge" aria-hidden="true">UCR</div>
+          <div class="nav-brand-text">
+            <p class="eyebrow-admin">Panel de administración</p>
+            <p class="nav-brand-sub">Comedor UCR</p>
+          </div>
+        </div>
+
+        <div class="nav-links" id="navLinks" role="tablist" aria-label="Secciones">
+          <button type="button" class="nav-link is-active" data-panel="menu" role="tab" aria-selected="true">
+            <span class="nav-link-icon" aria-hidden="true">🗓️</span> Menú del día
+          </button>
+          <button type="button" class="nav-link" data-panel="bank" role="tab" aria-selected="false">
+            <span class="nav-link-icon" aria-hidden="true">🍲</span> Banco de platillos
+          </button>
+          <button type="button" class="nav-link" data-panel="danger" role="tab" aria-selected="false">
+            <span class="nav-link-icon" aria-hidden="true">⚠️</span> Restablecer
+          </button>
+        </div>
+
+        <div class="nav-footer">
+          <a href="index.html" class="btn-ghost">Ver menú público</a>
+          <button type="button" class="btn-ghost" id="logoutBtn">Salir</button>
+        </div>
+      </nav>
+
+      <!-- ===== CONTENIDO ===== -->
+      <div class="admin-content">
+
+        <p class="save-toast" id="saveToast" role="status" aria-live="polite"></p>
+
+        <!-- ===== PANEL: MENÚ DEL DÍA POR DÍA ===== -->
+        <section class="admin-panel" id="panel-menu" data-panel="menu">
+          <div class="panel-heading">
+            <h1>Menú activo por día</h1>
+            <p class="section-help">Marca las opciones que se servirán ese día. Si marcas más de una opción de plato principal, en el menú público aparecerá como alternativa (ej. "Pollo en salsa o Carne en salsa").</p>
+          </div>
+
+          <div class="tabs" id="dayTabs" role="tablist" aria-label="Seleccionar día a editar"></div>
+
+          <div class="day-editor" id="dayEditor">
+            <!-- Generado dinámicamente por admin.js -->
+          </div>
+
+          <div class="admin-actions">
+            <button type="button" class="btn-primary" id="saveMenuBtn">Guardar menú del día</button>
+          </div>
+        </section>
+
+        <!-- ===== PANEL: BANCO DE PLATILLOS ===== -->
+        <section class="admin-panel" id="panel-bank" data-panel="bank" hidden>
+          <div class="panel-heading">
+            <h1>Banco de platillos</h1>
+            <p class="section-help">Agrega nuevas opciones o elimina las que ya no se usan. Estas opciones aparecerán disponibles para marcar en cualquier día.</p>
+          </div>
+
+          <div class="food-bank-grid" id="foodBankGrid">
+            <!-- Generado dinámicamente por admin.js -->
+          </div>
+        </section>
+
+        <!-- ===== PANEL: RESTABLECER ===== -->
+        <section class="admin-panel" id="panel-danger" data-panel="danger" hidden>
+          <div class="panel-heading">
+            <h1>Restablecer datos</h1>
+            <p class="section-help">Esto borra todos los cambios guardados y regresa el banco de platillos y el menú semanal a sus valores originales.</p>
+          </div>
+          <div class="admin-section admin-section-danger">
+            <button type="button" class="btn-danger" id="resetBtn">Restablecer a valores por defecto</button>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
