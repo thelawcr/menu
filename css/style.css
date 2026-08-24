@@ -735,3 +735,22 @@ main {
     overflow-wrap: anywhere;
   }
 }
+
+.day-btn.is-locked {
+  opacity: 0.45;
+  cursor: not-allowed;
+  background: #eef2f7;
+  color: #9aa6b8;
+  border-color: #e1e6ee;
+  transform: none;
+}
+
+.day-btn.is-locked:hover {
+  transform: none;
+  border-color: #e1e6ee;
+  color: #9aa6b8;
+}
+
+.day-btn.is-locked::after {
+  display: none;
+}
