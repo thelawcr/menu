@@ -596,3 +596,190 @@
 .bank-category.is-hidden {
   display: none !important;
 }
+
+/* ---------- PEDIDOS DE DELIVERY ---------- */
+
+.delivery-filter {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.filter-btn {
+  flex: 0 0 auto;
+  border: 1.5px solid var(--border);
+  background: var(--bg);
+  color: var(--ink-soft);
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 9px 16px;
+  border-radius: 100px;
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.filter-btn:hover {
+  border-color: var(--blue-bright);
+}
+
+.filter-btn.is-active {
+  background: var(--blue-deep);
+  border-color: var(--blue-deep);
+  color: #fff;
+}
+
+.delivery-orders-list {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.order-card {
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  background: var(--surface);
+  transition: border-color var(--transition);
+}
+
+.order-card.is-pending {
+  border-left: 4px solid var(--orange);
+}
+
+.order-card.is-delivered {
+  border-left: 4px solid #1B7A4A;
+  opacity: 0.85;
+}
+
+.order-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.order-meal-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--blue-deep);
+  background: var(--blue-pale);
+  padding: 5px 11px;
+  border-radius: 100px;
+}
+
+.order-meal-tag svg {
+  width: 14px;
+  height: 14px;
+}
+
+.order-status-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 5px 11px;
+  border-radius: 100px;
+}
+
+.order-status-pendiente {
+  background: #FFEEDF;
+  color: var(--orange);
+}
+
+.order-status-entregado {
+  background: #E1F3E9;
+  color: #1B7A4A;
+}
+
+.order-card h4 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.order-detail {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.84rem;
+  color: var(--ink-soft);
+  margin-bottom: 4px;
+}
+
+.order-detail svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  color: var(--ink-soft);
+}
+
+.order-notes {
+  font-style: italic;
+}
+
+.order-items {
+  font-size: 0.82rem;
+  color: var(--ink);
+  background: var(--bg);
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+  margin-top: 8px;
+}
+
+.order-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.order-time {
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+}
+
+.btn-mark-delivered {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  background: var(--blue-deep);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.8rem;
+  padding: 8px 14px;
+  border-radius: 100px;
+  transition: transform var(--transition), background var(--transition);
+}
+
+.btn-mark-delivered svg {
+  width: 14px;
+  height: 14px;
+}
+
+.btn-mark-delivered:hover {
+  transform: translateY(-1px);
+}
+
+.btn-mark-delivered:disabled {
+  opacity: 0.6;
+  cursor: default;
+  transform: none;
+}
+
+@media (min-width: 760px) {
+  .delivery-orders-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
