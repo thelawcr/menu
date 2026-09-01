@@ -88,6 +88,19 @@
           </button>
 
 
+          <button type="button" class="nav-link" data-panel="delivery" role="tab" aria-selected="false">
+
+            <span class="nav-link-icon" aria-hidden="true">
+
+              <i data-lucide="bike"></i>
+
+            </span>
+
+            Pedidos delivery
+
+          </button>
+
+
           <button type="button" class="nav-link" data-panel="danger" role="tab" aria-selected="false">
 
             <span class="nav-link-icon" aria-hidden="true">
@@ -208,6 +221,50 @@
               autocomplete="off">
           </div>
           <div class="food-bank-grid" id="foodBankGrid">
+
+            <!-- Generado dinámicamente -->
+
+          </div>
+
+        </section>
+
+
+        <!-- ===== PANEL DELIVERY ===== -->
+
+        <section class="admin-panel" id="panel-delivery" data-panel="delivery" hidden>
+
+          <div class="panel-heading">
+
+            <h1>
+              Pedidos de delivery
+            </h1>
+
+            <p class="section-help">
+
+              Revisa las solicitudes a domicilio y márcalas
+              como entregadas.
+
+            </p>
+
+          </div>
+
+          <div class="delivery-filter" id="deliveryFilter" role="tablist" aria-label="Filtrar pedidos">
+
+            <button type="button" class="filter-btn is-active" data-filter="pendiente" role="tab" aria-selected="true">
+              Pendientes
+            </button>
+
+            <button type="button" class="filter-btn" data-filter="entregado" role="tab" aria-selected="false">
+              Entregados
+            </button>
+
+            <button type="button" class="filter-btn" data-filter="todos" role="tab" aria-selected="false">
+              Todos
+            </button>
+
+          </div>
+
+          <div class="delivery-orders-list" id="deliveryOrdersList">
 
             <!-- Generado dinámicamente -->
 
