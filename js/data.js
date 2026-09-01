@@ -60,14 +60,32 @@ const WEEKLY_MENU_DEFAULT = {
 function clone(obj) { return JSON.parse(JSON.stringify(obj)); }
 
 async function getFoodBank() {
-  const { data, error } = await supabaseClient.from('food_items').select('id, legacy_id, category, name').order('name');
+  const { data, error } = await supabaseClient
+    .from('food_items')
+    .select('id, legacy_id, category, name, tipo_menu')
+    .order('name');
+
   if (error) throw error;
+
   const bank = {};
-  Object.keys(CATEGORY_LABELS).forEach(c => bank[c] = []);
-  (data || []).forEach(item => {
-    if (!bank[item.category]) bank[item.category] = [];
-    bank[item.category].push({ id: item.id, legacyId: item.legacy_id, name: item.name });
+
+  Object.keys(CATEGORY_LABELS).forEach(c => {
+    bank[c] = [];
   });
+
+  (data || []).forEach(item => {
+    if (!bank[item.category]) {
+      bank[item.category] = [];
+    }
+
+    bank[item.category].push({
+      id: item.id,
+      legacyId: item.legacy_id,
+      name: item.name,
+      tipoMenu: item.tipo_menu || 'normal'
+    });
+  });
+
   return bank;
 }
 
