@@ -1,0 +1,288 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#006633">
+  <meta name="description" content="El menú digital de la UCR Sede Caribe está temporalmente en mantenimiento.">
+
+  <title>En mantenimiento | UCR Sede Caribe</title>
+
+  <style>
+    :root {
+      color-scheme: light;
+      --ucr-green: #006633;
+      --ucr-green-dark: #004d26;
+      --ucr-gold: #f2c75c;
+      --background: #f5f7f5;
+      --surface: #ffffff;
+      --text: #202923;
+      --muted: #66736a;
+      --border: #e2e9e3;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      min-height: 100dvh;
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      background: var(--background);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      width: 100%;
+      padding: 24px;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .brand {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-mark {
+      width: 43px;
+      height: 43px;
+      border-radius: 12px;
+      background: var(--ucr-green);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      flex-shrink: 0;
+    }
+
+    .brand-name {
+      font-size: 15px;
+      font-weight: 750;
+      letter-spacing: -0.3px;
+    }
+
+    .brand-location {
+      margin-top: 4px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    main {
+      flex: 1;
+      display: grid;
+      place-items: center;
+      padding: 48px 20px;
+    }
+
+    .maintenance {
+      width: 100%;
+      max-width: 590px;
+      padding: 46px 36px;
+      text-align: center;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: 0 18px 55px rgba(25, 58, 35, 0.06);
+    }
+
+    .illustration {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 28px;
+      display: grid;
+      place-items: center;
+      background: #eaf4ec;
+      border-radius: 28px;
+      color: var(--ucr-green);
+    }
+
+    .illustration svg {
+      width: 52px;
+      height: 52px;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      margin-bottom: 22px;
+      border-radius: 999px;
+      background: #fff5d9;
+      color: #74520a;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #d49b19;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(30px, 6vw, 43px);
+      line-height: 1.12;
+      letter-spacing: -1.8px;
+      font-weight: 800;
+    }
+
+    .description {
+      max-width: 420px;
+      margin: 18px auto 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .divider {
+      width: 54px;
+      height: 4px;
+      margin: 30px auto;
+      border-radius: 99px;
+      background: var(--ucr-gold);
+    }
+
+    .notice {
+      padding: 17px;
+      border-radius: 14px;
+      background: #f5f8f5;
+      border: 1px solid var(--border);
+      font-size: 13px;
+      line-height: 1.7;
+      color: #4f5e53;
+    }
+
+    .notice strong {
+      color: var(--ucr-green-dark);
+    }
+
+    footer {
+      padding: 24px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    footer span {
+      color: var(--ucr-green);
+      font-weight: 700;
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 18px;
+      }
+
+      main {
+        padding: 30px 16px;
+      }
+
+      .maintenance {
+        padding: 36px 22px;
+        border-radius: 20px;
+      }
+
+      .description {
+        font-size: 14px;
+      }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .illustration {
+        animation: appear 500ms ease-out both;
+      }
+
+      @keyframes appear {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">UCR</div>
+
+      <div>
+        <div class="brand-name">Menú digital</div>
+        <div class="brand-location">Sede Caribe · Universidad de Costa Rica</div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="maintenance" aria-labelledby="page-title">
+      <div class="illustration" aria-hidden="true">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          role="img"
+        >
+          <rect x="3" y="4" width="18" height="13" rx="2"/>
+          <path d="M8 21h8"/>
+          <path d="M12 17v4"/>
+          <path d="M9 9l2 2 4-4"/>
+        </svg>
+      </div>
+
+      <div class="status">
+        <span class="status-dot"></span>
+        Mantenimiento temporal
+      </div>
+
+      <h1 id="page-title">¡Estamos mejorando!</h1>
+
+      <p class="description">
+        Estamos realizando algunos cambios en nuestro menú digital
+        para ofrecerte una experiencia mejor.
+      </p>
+
+      <div class="divider"></div>
+
+      <div class="notice">
+        <strong>Volveremos pronto.</strong><br>
+        Gracias por tu paciencia y comprensión.
+        Mientras tanto, puedes consultar directamente con la soda
+        si necesitas información sobre el menú del día.
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>Universidad de Costa Rica</span><br>
+    Sede Caribe · Menú digital
+  </footer>
+</body>
+</html>
