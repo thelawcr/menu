@@ -1,10 +1,5 @@
 
+
 {
-  "cleanUrls": true,
-  "rewrites": [
-    {
-      "source": "/((?!mantenimiento$).*)",
-      "destination": "/mantenimiento"
-    }
-  ]
+  "cleanUrls": true
 }
